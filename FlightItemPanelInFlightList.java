@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package flight.managment.system;
+ package flight.managment; 
 
 /**
  *
- * @author monirozzaman.rony
  */
 public class FlightItemPanelInFlightList extends javax.swing.JPanel {
 
@@ -29,7 +28,7 @@ public class FlightItemPanelInFlightList extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("fgbfghfgjhgjghghkk");
+        jLabel1.setText(" HEllO ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
