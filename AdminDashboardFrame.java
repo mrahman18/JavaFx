@@ -142,6 +142,7 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setVisible(true);
+        break;
     }
     private void switchPanel(JPanel jPanel) {
         basePanel.removeAll();
@@ -153,6 +154,7 @@ public class AdminDashboardFrame extends javax.swing.JFrame {
         basePanel.revalidate();
 
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu allCustomerList;
     private javax.swing.JMenu allFlightList;
