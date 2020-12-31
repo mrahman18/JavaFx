@@ -10,7 +10,6 @@ import java.util.UUID;
 
 /**
  *
- * @author monirozzaman.rony
  */
 public class Configration {
 
