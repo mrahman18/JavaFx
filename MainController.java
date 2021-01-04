@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +26,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javax.swing.JOptionPane;
+
 
 
 public class MainController implements Initializable {
@@ -44,65 +47,65 @@ public class MainController implements Initializable {
       @FXML
       private Button btnSignin;
       
-      public void handleButtonAction(MouseEvent event){
-          if (event.getSource() == lbl_close){
-              System.exit(0);
-          }
-          if(event.getSource() == btnSignin){
-              
-          }
-              // login here
-      }
+      @FXML
+      private Button btnSignup;
       
-   
-   
+     Connection con;
+      PreparedStatement pst;
+      ResultSet resultSet ;
     
+          
+      
+      
+     @FXML
+             void login(ActionEvent event){
+                 
+          String uname= txtUsername.getText();
+          String pass = txtPassword.getText();
+          
+          if(uname.equals("") && pass.equals("")){
+              JOptionPane.showMessageDialog(null, "Username or password blank");
+          }
+          else{
+              try {
+                  Class.forName("com.mysql.jdbc.Driver");
+                  con = DriverManager.getConnection("jdbc:mysql://localhost/login", "root","");
+                  
+                  pst = con.prepareStatement("select * from users where username=? and password =? ");
+                  
+                  pst.setString(1, uname);
+                  pst.setString(2, pass);
+                  
+                  resultSet = pst.executeQuery();
+                  
+                   resultSet = pst.executeQuery();
+                   if( resultSet.next()){
+                       JOptionPane.showMessageDialog(null, "Login Success");
+                   }else{
+                       JOptionPane.showMessageDialog(null, "Login Failed");
+                       txtUsername.setText("");
+                       txtPassword.setText("");
+                       txtUsername.requestFocus();
+                   }
+                       
+                  
+                          
+              } catch (ClassNotFoundException ex) {
+                  Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+              } catch (SQLException ex) {
+                  Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+              }
+          }
+              
+             }
       @Override
       public void initialize(URL url, ResourceBundle rb) {
         
     }    
-      Connection con = null;
-      PreparedStatement preparedStatement = null;
-      ResultSet resultSet = null;
-      private void logIn(){
-          String email = txtUsername.getText().toString();
-          String password = txtPassword.getText().toString();
-          
-          //query
-          String sql = "SELECT * From users Where email = ? and password = ?";
-          
-          try {
-              preparedStatement = con.prepareStatement(sql);
-              preparedStatement.setString(1, email);
-              preparedStatement.setString(2, password);
-              resultSet = preparedStatement.executeQuery();
-              if(!resultSet.next()){
-                  lblError.setText("Invalid Username/Password");
-              }else
-              {
-                  showDialog("Login Successful", null, "Successful");
-                
-              }
-              
-              
-              
-              
-              
-              
-              
-              
-          } catch (Exception ex) {
-              Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-          }
+      
           
           
-          
-      }
-      private void showDialog(String info, String header, String Title){
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION );
-                  alert.setContentText(info);
-                  alert.setHeaderText(header);
-                  alert.showAndWait();
-      }
-    
+         
 }
+        
+
