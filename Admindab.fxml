@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="544.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splashscreenproject.AdmindabController">
+   <children>
+      <Pane layoutY="33.0" prefHeight="551.0" prefWidth="200.0" styleClass="panel" stylesheets="@SpashCss.css">
+         <children>
+            <Button fx:id="btnAdd" layoutX="32.0" layoutY="291.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #0fdb0f;" text="Add" />
+            <Button fx:id="btnUpdate" layoutX="34.0" layoutY="360.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #e6a417;" text="Update" />
+            <Button fx:id="btnDelete" layoutX="35.0" layoutY="427.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #b81f2e;" text="Delete" />
+            <Button fx:id="btnLogout" layoutX="35.0" layoutY="489.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #d250e6;" text="LogOut" />
+         </children></Pane>
+      <Pane layoutY="-3.0" prefHeight="55.0" prefWidth="885.0" styleClass="panel" stylesheets="@SpashCss.css" />
+      <TableView fx:id="tableAdmin" layoutX="200.0" layoutY="52.0" prefHeight="531.0" prefWidth="685.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="63.0" text="ID" />
+          <TableColumn fx:id="col_from" prefWidth="157.0" text="From" />
+            <TableColumn fx:id="col_to" prefWidth="144.0" text="TO" />
+            <TableColumn fx:id="col_date" prefWidth="95.0" text="Date" />
+            <TableColumn fx:id="col_time" prefWidth="107.0" text="Time" />
+            <TableColumn fx:id="col_opening" prefWidth="118.0" text="Openings" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

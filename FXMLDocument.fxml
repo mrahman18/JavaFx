@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="544.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="splashscreenproject.MainController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="550.0" prefWidth="341.0" styleClass="panel" stylesheets="@SpashCss.css">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="143.0" prefHeight="35.0" prefWidth="328.0" text="Flight management system" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="422.0" layoutY="145.0" prefHeight="11.0" prefWidth="182.0" text="Plan your flight with us">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_CENTER" layoutX="363.0" layoutY="193.0" prefHeight="35.0" prefWidth="350.0" styleClass="textfld" stylesheets="@SpashCss.css">
+         <children>
+            <TextField fx:id="txtUsername" alignment="TOP_LEFT" prefHeight="35.0" prefWidth="300.0" promptText="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="363.0" layoutY="257.0" prefHeight="35.0" prefWidth="350.0" styleClass="textfld" stylesheets="@SpashCss.css">
+         <children>
+            <PasswordField fx:id="txtPassword" alignment="TOP_LEFT" prefHeight="35.0" prefWidth="300.0" promptText="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </HBox>
+      <Button fx:id="btnSignin" layoutX="368.0" layoutY="347.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="341.0" stylesheets="@SpashCss.css" text="Login" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSignup" layoutX="368.0" layoutY="419.0" mnemonicParsing="false" onAction="#createAccountForm" prefHeight="43.0" prefWidth="341.0" stylesheets="@SpashCss.css" text="Register" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblError" layoutX="448.0" layoutY="303.0" prefHeight="21.0" prefWidth="203.0" textFill="#f50f0f">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="btnForgot" layoutX="623.0" layoutY="305.0" text="Forgot Password" textFill="#1f1ff8" />
+   </children>
+</AnchorPane>

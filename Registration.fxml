@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="516.0" prefWidth="608.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="516.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="1.0" prefHeight="516.0" prefWidth="608.0" style="-fx-background-color: #7851A9;">
          <children>
@@ -48,12 +47,7 @@
             <TextField fx:id="bfname" layoutX="41.0" layoutY="378.0" prefHeight="25.0" prefWidth="226.0" />
             <TextField fx:id="lname" layoutX="385.0" layoutY="76.0" prefHeight="25.0" prefWidth="193.0" />
             <TextField fx:id="pname" layoutX="383.0" layoutY="190.0" prefHeight="25.0" prefWidth="193.0" />
-            <Button fx:id="backbutton" layoutX="52.0" layoutY="436.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="186.0" text="Back">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Button>
-            <Button fx:id="createbutton" layoutX="383.0" layoutY="436.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="180.0" text="Create">
+            <Button fx:id="createbutton" layoutX="129.0" layoutY="435.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="373.0" text="Create">
                <font>
                   <Font size="18.0" />
                </font>

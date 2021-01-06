@@ -5,28 +5,24 @@
  */
 package splashscreenproject;
 
-import java.awt.event.MouseEvent;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javax.swing.JOptionPane;
+import javafx.stage.Stage;
+
+import javax.swing.*;
+import java.net.URL;
+import java.sql.*;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -58,7 +54,7 @@ public class MainController implements Initializable {
       
       
      @FXML
-             void login(ActionEvent event){
+             void login(ActionEvent event) throws IOException{
                  
           String uname= txtUsername.getText();
           String pass = txtPassword.getText();
@@ -81,6 +77,12 @@ public class MainController implements Initializable {
                    resultSet = pst.executeQuery();
                    if( resultSet.next()){
                        JOptionPane.showMessageDialog(null, "Login Success");
+                       btnSignin.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("Admindab.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
                    }else{
                        JOptionPane.showMessageDialog(null, "Login Failed");
                        txtUsername.setText("");
@@ -98,6 +100,19 @@ public class MainController implements Initializable {
           }
               
              }
+             @FXML
+             private void createAccountForm() throws IOException{
+                 
+                     Parent root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
+                     Stage registerStage = new Stage();
+                     registerStage.setScene(new Scene(root,608,516));
+                     registerStage.show();
+                     
+        
+                     
+                 
+             }
+             
       @Override
       public void initialize(URL url, ResourceBundle rb) {
         
